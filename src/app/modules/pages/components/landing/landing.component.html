@@ -10,10 +10,18 @@
             <p class="text-2xl">Based in Ujjain, India</p>
             <p class="text-gray-500 mt-10">© 2023 Pradyumna. All Rights Reserved</p>
             <div class="flex space-x-4 mt-10">
-                <img class="invert h-8 w-8" src="assets/github.png" alt="">
-                <img class="invert h-8 w-8" src="assets/linkedin.png" alt="">
-                <img class="h-8 w-8" src="assets/hashnode.png" alt="">
-                <img class="invert h-8 w-8" src="assets/instagram.png" alt="">
+                <a target="_blank" href="https://github.com/PradyumnaGarg">
+                    <img class="invert h-8 w-8" src="assets/github.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/pradyumnagarg/">
+                    <img class="invert h-8 w-8" src="assets/linkedin.png" alt="">
+                </a>
+                <a target="_blank" href="https://pradyumnagarg.hashnode.dev/">
+                    <img class="h-8 w-8" src="assets/hashnode.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.instagram.com/pgveteran/">
+                    <img class="invert h-8 w-8" src="assets/instagram.png" alt="">
+                </a>
             </div>
             
             <a href="pradumnagarg@hotmail.com" class="px-8 py-2 bg-white text-black mt-10 rounded-full">Let's Connect</a>
@@ -25,18 +33,21 @@
             <div class="flex justify-between">
                 <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Introduce</span>
             </div>
-            <p class="text-6xl font-serif mt-12 leading-tight  ">Say Hi from Pradyumna, Software developer</p>
-            <p class="text-xl mt-6 leading-normal">I code beautifully simple things and I love what I do. Just simple like that!</p>
+            <p class="text-6xl font-serif mt-12 leading-tight  "> Welcome to My Portfolio - Unleashing the Power of Code</p>
+            <p class="text-xl mt-6 leading-normal">I am a passionate and skilled developer who discovered my love for programming during my early days as a rookie developer. Over the years, I have honed my skills and have grown into a reliable professional, entrusted with coaching junior developers, implementing new standards, and finding innovative solutions to tackle complex challenges.</p>
         </section>
 
         <section class="mt-28">
             <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">About</span>
             <p class="text-5xl font-serif mt-12 leading-tight">Every great design begin with an even better story</p>
             <p class="text-xl mt-6 leading-normal">
-                Since beginning my journey as a software developer nearly 3 years ago, I've done remote work for agencies, 
-                consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. 
-                I'm quietly confident, naturally interested, and constantly focusing on honing my coding skills one development problem at a time.
-                My passion for programming drives me to constantly improve my skills and seek out new challenges. I believe that my ability to work collaboratively, solve complex problems, and take ownership of my work makes me a valuable asset to any team.
+                With a strong foundation in JavaScript and its associated technologies, including Angular, React, NodeJs, TypeScript, and MongoDB, I have developed a keen understanding of web development. My expertise also extends to hosting and deploying web applications, utilizing platforms such as Heroku, Vercel, CleverCloud, and AWS, where I've worked with EC2 and SES.
+            </p>
+            <p class="text-xl mt-6 leading-normal">
+                Driven by curiosity and a thirst for knowledge, I have recently ventured into the exciting realm of Blockchain technology. My experiences with Hyperledger Fabrics, Bash, Docker, Docker Compose, and Docker Swarm have allowed me to explore the potential of decentralized applications and distributed systems.
+            </p>
+            <p class="text-xl mt-6 leading-normal">
+                Passion fuels my desire to continuously improve and adapt to the ever-evolving world of programming. My ability to collaborate effectively, solve intricate problems, and take ownership of my work makes me a valuable asset to any team. With each new challenge, I embrace the opportunity to unleash the power of code and contribute to shaping the future through technology.
             </p>
         </section>
         
@@ -64,10 +75,12 @@
             <p class="text-5xl font-serif mt-12 leading-tight">My Advantages</p>
             <div class="grid grid-cols-4 gap-6 mt-12">
                 <div *ngFor="let skill of skills" class="flex flex-col items-center justify-center space-y-2">
-                    <div class="border p-4 h-44 flex items-center justify-center rounded-full">
-                        <img src="assets/angular.png" alt="" srcset="" width="100">
+                    <div class="border p-8 flex items-center justify-center rounded-full group">
+                        <div class="w-[80px] h-[80px] overflow-hidden rounded-xl transition duration-200 object-cover p-2 group-hover:bg-white flex items-center justify-center">
+                            <img [src]="'assets/' + skill.logo" class="group-hover:grayscale-0 grayscale transition duration-200" alt="" srcset="" width="100">
+                        </div>
                     </div>
-                    <span class="text-lg">{{skill}}</span>
+                    <span class="text-lg">{{skill.name}}</span>
                 </div>
             </div>
         </section>

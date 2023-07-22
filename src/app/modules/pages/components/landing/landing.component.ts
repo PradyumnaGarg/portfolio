@@ -8,17 +8,50 @@ import { Component } from '@angular/core';
 export class LandingComponent {
 
   skills = [
-    'Angular',
-    'NodeJs',
-    'ReactJs',
-    'ExpressJS',
-    'MongoDB',
-    'Javascript',
-    'Typescript',
-    'HTML',
-    'CSS',
-    'Tailwind',
-    'Git'   
+    {
+      name: 'Angular',
+      logo: 'angularlogo.png'
+    },
+    {
+      name: 'NodeJs',
+      logo: 'nodejslogo.png'
+    },
+    {
+      name: 'ReactJs',
+      logo: 'reactjslogo.png'
+    },
+    {
+      name: 'ExpressJs',
+      logo: 'expressjslogo.png'
+    },
+    {
+      name: 'MongoDB',
+      logo: 'mongodblogo.png'
+    },
+    {
+      name: 'Javascript',
+      logo: 'jslogo.png'
+    },
+    {
+      name: 'Typescript',
+      logo: 'typescriptlogo.png'
+    },
+    {
+      name: 'HTML',
+      logo: 'htmllogo.png'
+    },
+    {
+      name: 'CSS',
+      logo: 'csslogo.png'
+    },
+    {
+      name: 'Tailwind',
+      logo: 'tailwindlogo.png'
+    },
+    {
+      name: 'Git',
+      logo: 'gitlogo.png'   
+    }
   ]
 
   blogList = [
