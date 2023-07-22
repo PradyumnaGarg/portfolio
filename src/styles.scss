@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap');
+
+* {
+    font-family: 'Outfit' !important;
+    font-weight: 300;
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #656565;
+    border-radius: 50%;
+    left: -6px;
+    top: 7px;
+    transition: .3s;
+}
+
+
+.item {
+ position: relative;
+ padding-left: 74px;
+ padding-bottom: 68px; 
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #656565;
+    border-radius: 50%;
+    left: -6px;
+    top: 7px;
+    transition: .3s;
+    z-index: 1;
+}
+
+.item::after {
+    content: '';
+    background: #333333;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.last-item::after {
+    height: 60%;
+}

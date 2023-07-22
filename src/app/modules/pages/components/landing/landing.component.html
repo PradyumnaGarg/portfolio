@@ -1,0 +1,127 @@
+<div class="flex flex-col lg:flex-row bg-black text-white min-h-screen container mx-auto">
+    <div class="lg:fixed left-12 px-8 pt-6 xl:pt-12 mx-auto w-full lg:w-auto">
+        <div class="p-8 w-full rounded-3xl border-white border flex flex-col items-center xl:w-[480px]">
+            <h1 class="text-3xl mb-2">Pradyumna Garg</h1>
+            <h2 class="text-xl mb-4">Software Developer</h2>
+            <div class="h-[200px] w-[200px] xl:h-[280px] xl:w-[280px] rounded-3xl bg-white overflow-hidden">
+                <img class="object-cover h-full w-full max-w-[240px] xl:max-w-[300px]" src="assets/me.jpeg" alt="" srcset="">
+            </div>
+            <p class="text-2xl mt-10">pradyumnagarg@hotmail.com</p>
+            <p class="text-2xl">Based in Ujjain, India</p>
+            <p class="text-gray-500 mt-10">© 2023 Pradyumna. All Rights Reserved</p>
+            <div class="flex space-x-4 mt-10">
+                <img class="invert h-8 w-8" src="assets/github.png" alt="">
+                <img class="invert h-8 w-8" src="assets/linkedin.png" alt="">
+                <img class="h-8 w-8" src="assets/hashnode.png" alt="">
+                <img class="invert h-8 w-8" src="assets/instagram.png" alt="">
+            </div>
+            
+            <a href="pradumnagarg@hotmail.com" class="px-8 py-2 bg-white text-black mt-10 rounded-full">Let's Connect</a>
+        </div>
+    </div> 
+    <div class="w-full lg:w-2/5 xl:w-1/3"></div>
+    <div class="w-full lg:w-3/5 xl:w-2/3 pt-12 pr-12 flex flex-col max-w-4xl ml-8">
+        <section>
+            <div class="flex justify-between">
+                <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Introduce</span>
+            </div>
+            <p class="text-6xl font-serif mt-12 leading-tight  ">Say Hi from Pradyumna, Software developer</p>
+            <p class="text-xl mt-6 leading-normal">I code beautifully simple things and I love what I do. Just simple like that!</p>
+        </section>
+
+        <section class="mt-28">
+            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">About</span>
+            <p class="text-5xl font-serif mt-12 leading-tight">Every great design begin with an even better story</p>
+            <p class="text-xl mt-6 leading-normal">
+                Since beginning my journey as a software developer nearly 3 years ago, I've done remote work for agencies, 
+                consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. 
+                I'm quietly confident, naturally interested, and constantly focusing on honing my coding skills one development problem at a time.
+                My passion for programming drives me to constantly improve my skills and seek out new challenges. I believe that my ability to work collaboratively, solve complex problems, and take ownership of my work makes me a valuable asset to any team.
+            </p>
+        </section>
+        
+        <section class="mt-28">
+            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Resume</span>
+            <p class="text-5xl font-serif mt-12 leading-tight">Education and Experience</p>
+
+            <div class="item mt-10">
+                <span class="date text-gray-500 uppercase text-lg">2020 - Present</span>                                    
+                <h2 class="text-2xl mt-8">Software Developer</h2>
+                <p class="text-gray-500">Brain Inventory</p>
+                <h2 class="text-2xl mt-8">Junior Software Developer</h2>
+                <p class="text-gray-500">Brain Inventory</p>
+            </div>
+
+            <div class="item pb-10 last-item">
+                <span class="date text-gray-500 uppercase text-lg">2016 - 2020</span>                                    
+                <h2 class="text-2xl mt-8">Bachelor of Engineering, Computer Science</h2>
+                <p class="text-gray-500">Mahakal Institute of Technology, Ujjain</p>
+            </div>  
+        </section>
+
+        <section class="mt-28">
+            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Skills</span>
+            <p class="text-5xl font-serif mt-12 leading-tight">My Advantages</p>
+            <div class="grid grid-cols-4 gap-6 mt-12">
+                <div *ngFor="let skill of skills" class="flex flex-col items-center justify-center space-y-2">
+                    <div class="border p-4 h-44 flex items-center justify-center rounded-full">
+                        <img src="assets/angular.png" alt="" srcset="" width="100">
+                    </div>
+                    <span class="text-lg">{{skill}}</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-28">
+            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Blogs</span>
+            <p class="text-5xl font-serif mt-12 leading-tight">My Recent Blogs</p>
+            <div class="grid grid-cols-2 gap-6 mt-12">
+                <div *ngFor="let blog of blogList" class="border rounded-xl flex flex-col space-y-4 ">
+                    <div class="w-full">
+                        <img src="{{blog.image}}" class="rounded-xl" alt="" srcset="">
+                    </div>
+                    <div class="flex flex-col p-6 space-y-4">
+                        <h3 class="text-xl">{{blog.title}}</h3>
+
+                        <!-- <p>{{blog.description}}</p> -->
+                        <p>{{blog.date}}</p>
+                        <!-- <a [href]="blog.url" class="px-4 py-2 rounded-xl border text-white w-fit">View</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-28 min-h-screen py-12">
+            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Contact</span>
+            <p class="text-5xl font-serif mt-12 leading-tight">Let's Work Together!</p>
+            <h3 class="text-2xl mt-8">pradumnagarg@hotmail.com</h3>
+            <form class="w-full mt-8">
+                <div class="flex p-4 pl-0">
+                    <div class="flex flex-col w-1/2">
+                        <label for="fullname" class="uppercase">Full Name</label>
+                        <input type="text" id="fullname" class="bg-transparent text-xl focus:outline-none" placeholder="Your Full Name">
+                    </div>
+                    <div class="flex flex-col w-1/2">
+                        <label for="email" class="uppercase">Email</label>
+                        <input type="text" id="email" class="bg-transparent text-xl focus:outline-none" placeholder="Your email">
+                    </div>
+                </div>
+                <div class="flex p-4 pl-0 mt-6">
+                    <div class="flex flex-col w-1/2">
+                        <label for="fullname" class="uppercase">Phone (Optional)</label>
+                        <input type="text" id="fullname" class="bg-transparent text-xl focus:outline-none" placeholder="Your phone number">
+                    </div>
+                    <div class="flex flex-col w-1/2">
+                        <label for="email" class="uppercase">Your Budget (Optional)</label>
+                        <input type="text" id="email" class="bg-transparent text-xl focus:outline-none" placeholder="A range budget for your project">
+                    </div>
+                </div>
+                <div class="flex flex-col p-4 pl-0">
+                    <label for="message" class="uppercase">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="5" class="bg-transparent text-xl focus:outline-none" placeholder="Write your message here..."></textarea>
+                </div>
+                <button class="bg-white px-8 py-2 text-black rounded-full text-lg">Send Message</button>
+            </form>
+        </section>
+    </div>
+</div>
