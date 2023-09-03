@@ -29,16 +29,14 @@
     </div> 
     <div class="w-full lg:w-2/5 xl:w-1/3"></div>
     <div class="w-full lg:w-3/5 xl:w-2/3 pt-12 pr-12 flex flex-col max-w-4xl ml-8">
-        <section>
-            <div class="flex justify-between">
-                <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Introduce</span>
-            </div>
+        <section id="home">
+            <ng-container *ngTemplateOutlet="chip; context: { $implicit: { title: 'Introduce', icon: homeIcon } }"></ng-container>
             <p class="text-4xl md:text-6xl font-serif mt-12 leading-tight  "> Welcome to My Portfolio - Unleashing the Power of Code</p>
             <p class="text-lg md:text-xl mt-6 leading-normal">I am a passionate and skilled developer who discovered my love for programming during my early days as a rookie developer. Over the years, I have honed my skills and have grown into a reliable professional, entrusted with coaching junior developers, implementing new standards, and finding innovative solutions to tackle complex challenges.</p>
         </section>
-
-        <section class="mt-28">
-            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">About</span>
+        
+        <section id="about" class="mt-28">
+            <ng-container *ngTemplateOutlet="chip; context: { $implicit: { title: 'About', icon: aboutIcon } }"></ng-container>
             <p class="text-3xl md:text-5xl font-serif mt-12 leading-tight">Every great design begin with an even better story</p>
             <p class="text-lg md:text-xl mt-6 leading-normal">
                 With a strong foundation in JavaScript and its associated technologies, including Angular, React, NodeJs, TypeScript, and MongoDB, I have developed a keen understanding of web development. My expertise also extends to hosting and deploying web applications, utilizing platforms such as Heroku, Vercel, CleverCloud, and AWS, where I've worked with EC2 and SES.
@@ -51,10 +49,9 @@
             </p>
         </section>
         
-        <section class="mt-28">
-            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Resume</span>
+        <section id="education" class="mt-28">
+            <ng-container *ngTemplateOutlet="chip; context: { $implicit: { title: 'Resume', icon: educationIcon } }"></ng-container>
             <p class="text-3xl md:text-5xl font-serif mt-12 leading-tight">Education and Experience</p>
-
             <div class="item mt-10">
                 <span class="date text-gray-500 uppercase text-lg">2020 - Present</span>                                    
                 <h2 class="text-2xl mt-8">Software Developer</h2>
@@ -62,7 +59,6 @@
                 <h2 class="text-2xl mt-8">Junior Software Developer</h2>
                 <p class="text-gray-500">Brain Inventory</p>
             </div>
-
             <div class="item pb-10 last-item">
                 <span class="date text-gray-500 uppercase text-lg">2016 - 2020</span>                                    
                 <h2 class="text-2xl mt-8">Bachelor of Engineering, Computer Science</h2>
@@ -70,13 +66,13 @@
             </div>  
         </section>
 
-        <section class="mt-28">
-            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Skills</span>
+        <section id="skill" class="mt-28">
+            <ng-container *ngTemplateOutlet="chip; context: { $implicit: { title: 'Skills', icon: skillIcon } }"></ng-container>
             <p class="text-3xl md:text-5xl font-serif mt-12 leading-tight">My Advantages</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
                 <div *ngFor="let skill of skills" class="flex flex-col items-center justify-center space-y-2">
-                    <div class="border p-6 md:p-8 flex items-center justify-center rounded-full group">
-                        <div class="w-[80px] h-[80px] overflow-hidden rounded-xl transition duration-200 object-cover p-2 group-hover:bg-white flex items-center justify-center">
+                    <div class="border p-6 md:p-8 flex items-center justify-center rounded-full group hover:bg-white">
+                        <div class="w-[80px] h-[80px] overflow-hidden rounded-xl transition duration-200 object-cover p-2 flex items-center justify-center">
                             <img [src]="'assets/' + skill.logo" class="group-hover:grayscale-0 grayscale transition duration-200" alt="" srcset="" width="100">
                         </div>
                     </div>
@@ -85,27 +81,26 @@
             </div>
         </section>
 
-        <section class="mt-28">
-            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Blogs</span>
+        <section id="blog" class="mt-28">
+            <ng-container *ngTemplateOutlet="chip; context: { $implicit: { title: 'Blogs', icon: blogIcon } }"></ng-container>
             <p class="text-3xl md:text-5xl font-serif mt-12 leading-tight">My Recent Blogs</p>
             <div class="grid grid-col-1 md:grid-cols-2 gap-6 mt-12">
-                <div *ngFor="let blog of blogList" class="border rounded-xl flex flex-col space-y-4 ">
-                    <div class="w-full">
-                        <img src="{{blog.image}}" class="rounded-xl" alt="" srcset="">
-                    </div>
-                    <div class="flex flex-col p-6 space-y-4">
-                        <h3 class="text-xl">{{blog.title}}</h3>
-
-                        <!-- <p>{{blog.description}}</p> -->
-                        <p>{{blog.date}}</p>
-                        <!-- <a [href]="blog.url" class="px-4 py-2 rounded-xl border text-white w-fit">View</a> -->
-                    </div>
+                <div *ngFor="let blog of blogList" class="flex-1">
+                    <a href="{{blog.url}}" target="_blank" class="h-full border rounded-xl flex flex-col space-y-4 transform hover:scale-105 duration-300">
+                        <div class="w-full">
+                            <img src="{{blog.image}}" class="rounded-xl" alt="" srcset="">
+                        </div>
+                        <div class="flex flex-col p-6 space-y-4 flex-1">
+                            <h3 class="text-xl flex-1">{{blog.title}}</h3>
+                            <p>{{blog.date}}</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="mt-28 min-h-screen py-12">
-            <span class="uppercase border border-white rounded-full text-white px-6 py-2 text-sm">Contact</span>
+        <section id="contact" class="mt-28 min-h-screen py-12">
+            <ng-container *ngTemplateOutlet="chip; context: { $implicit: { title: 'Contact', icon: contactIcon } }"></ng-container>
             <p class="text-3xl md:text-5xl font-serif mt-12 leading-tight">Let's Work Together!</p>
             <h3 class="text-lg md:text-2xl mt-8">pradumnagarg@hotmail.com</h3>
             <form class="w-full mt-8">
@@ -138,3 +133,68 @@
         </section>
     </div>
 </div>
+
+<div class="fixed top-1/2 right-10 transform -translate-y-1/2">
+    <div class="p-4 py-8 rounded-full border flex flex-col space-y-6 text-white">
+        <a href="#home">
+            <ng-container *ngTemplateOutlet="homeIcon"></ng-container>    
+        </a>
+        <a href="#about">
+            <ng-container *ngTemplateOutlet="aboutIcon"></ng-container>              
+        </a>
+        <a href="#education">
+            <ng-container *ngTemplateOutlet="educationIcon"></ng-container>
+        </a>
+        <a href="#skill">
+            <ng-container *ngTemplateOutlet="skillIcon"></ng-container>  
+        </a>
+        <a href="#blog">
+            <ng-container *ngTemplateOutlet="blogIcon"></ng-container>
+        </a>
+        <a href="#contact">
+            <ng-container *ngTemplateOutlet="contactIcon"></ng-container>            
+        </a>
+    </div>
+</div>
+
+<ng-template #homeIcon let-c>
+    <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="c.class" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+    </svg>
+</ng-template>
+<ng-template #aboutIcon let-c>
+    <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="c.class" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+    </svg>
+</ng-template>
+<ng-template #educationIcon let-c>
+    <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="c.class" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+    </svg>
+</ng-template>
+<ng-template #skillIcon let-c>
+    <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="c.class" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+      </svg>
+      
+</ng-template>
+<ng-template #blogIcon let-c>
+    <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="c.class" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+    </svg>
+</ng-template>
+<ng-template #contactIcon let-c>
+    <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="c.class" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+    </svg>              
+</ng-template>
+
+
+<ng-template #chip let-d>
+    <div class="flex items-center space-x-2 w-fit border border-white rounded-full px-6 py-2">
+        <ng-container *ngTemplateOutlet="d.icon; context: { $implicit: { class: 'w-5 h-5' } }"></ng-container>
+        <span class="uppercase text-white  text-sm">
+            {{d.title}}
+        </span>
+    </div>
+</ng-template>
