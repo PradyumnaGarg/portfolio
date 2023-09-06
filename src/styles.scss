@@ -57,3 +57,19 @@
 .last-item::after {
     height: 60%;
 }
+
+.icon-outline {
+    display: block;
+}
+
+.icon-solid {
+    display: none;
+}
+
+.current > .icon-outline {
+    display: none;
+}
+
+.current > .icon-solid {
+    display: block;
+}

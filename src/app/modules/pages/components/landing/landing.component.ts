@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit {
 
   skills = [
     {
@@ -85,4 +85,40 @@ export class LandingComponent {
     },
     
   ]
+
+  ngOnInit(): void {
+    let prevScrollpos = window.pageYOffset;
+    const mainNavLinks = document.querySelectorAll('nav a') as unknown as Array<HTMLAnchorElement>;
+    window.onscroll = () => {
+      const fromTop = window.scrollY + 200;
+      // const currentScrollPos = window.pageYOffset;
+      // if (window.pageYOffset > 50) {
+      //   if (prevScrollpos > currentScrollPos) {
+      //     document.getElementById('navbar')?.classList.remove('scrollUp');
+      //   } else {
+      //     document.getElementById('navbar')?.classList.add('scrollUp');
+      //     if(window.innerWidth < 640) {
+      //       document.getElementById("nav-content")?.classList.add("hidden");
+      //       document.getElementById("nav-content1")?.classList.add("hidden");
+      //     }
+      //     else {
+      //       document.getElementById("nav-content")?.classList.remove("hidden");
+      //       document.getElementById("nav-content1")?.classList.remove("hidden");
+      //     }
+      //   }
+      //   prevScrollpos = currentScrollPos;
+      // }
+
+      mainNavLinks.forEach((link: HTMLAnchorElement) => {
+        if (link?.hash) {
+          const section: HTMLElement = document.querySelector(link?.hash) as HTMLElement;
+          if ( section?.offsetTop <= fromTop && section?.offsetTop + section?.offsetHeight > fromTop ) {
+            link.classList.add('current');
+          } else {
+            link.classList.remove('current');
+          }
+        }
+      });
+    };
+  }
 }
