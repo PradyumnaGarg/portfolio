@@ -13,12 +13,12 @@ export class LandingComponent implements OnInit {
       logo: 'angularlogo.png'
     },
     {
-      name: 'NodeJs',
-      logo: 'nodejslogo.png'
-    },
-    {
       name: 'ReactJs',
       logo: 'reactjslogo.png'
+    },
+    {
+      name: 'NodeJs',
+      logo: 'nodejslogo.png'
     },
     {
       name: 'ExpressJs',
@@ -29,12 +29,20 @@ export class LandingComponent implements OnInit {
       logo: 'mongodblogo.png'
     },
     {
+      name: 'Typescript',
+      logo: 'typescriptlogo.png'
+    },
+    {
       name: 'Javascript',
       logo: 'jslogo.png'
     },
     {
-      name: 'Typescript',
-      logo: 'typescriptlogo.png'
+      name: 'Git',
+      logo: 'gitlogo.png'   
+    },
+    {
+      name: 'Tailwind',
+      logo: 'tailwindlogo.png'
     },
     {
       name: 'HTML',
@@ -44,14 +52,6 @@ export class LandingComponent implements OnInit {
       name: 'CSS',
       logo: 'csslogo.png'
     },
-    {
-      name: 'Tailwind',
-      logo: 'tailwindlogo.png'
-    },
-    {
-      name: 'Git',
-      logo: 'gitlogo.png'   
-    }
   ]
 
   blogList = [
